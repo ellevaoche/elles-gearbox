@@ -1,0 +1,39 @@
+extensions.snapshot.json
+  s_706a20caf42ef1::t_ac990b7abf5e7d 1-413
+package-lock.json
+  s_706a20caf42ef1::t_d6daf86c3036da 1-7235
+.github/workflows/ci.yml
+  s_706a20caf42ef1::t_8f18eeb01a2118 1-66
+.gitignore
+  s_706a20caf42ef1::t_75b66afa127ef4 1-4
+.releaserc.json
+  s_706a20caf42ef1::t_e7ce2c38b4e6d7 1-45
+.vscodeignore
+  s_706a20caf42ef1::t_77ff4f0db33500 1-12
+CHANGELOG.md
+  s_706a20caf42ef1::t_1faebccac51d39 1-16
+LICENSE
+  s_706a20caf42ef1::t_376b4e3ec117b3 1-21
+README.md
+  s_706a20caf42ef1::t_af27f0d639dbfa 1-284
+package.json
+  s_706a20caf42ef1::t_01dddb89269ce9 1-69
+scripts/release.test.mjs
+  s_706a20caf42ef1::t_f6a160c3b8e72b 1-74
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "665d93818e17e4c6ebc9297f48a50bf19b74e367",
+  "prompts": {},
+  "sessions": {
+    "s_706a20caf42ef1": {
+      "agent_id": {
+        "tool": "github-copilot-cli",
+        "id": "62c05662-039b-43e7-a080-2c0b4121e815",
+        "model": "unknown"
+      },
+      "human_author": "Elmar Meuthen <2647545+ellevaoche@users.noreply.github.com>"
+    }
+  }
+}
