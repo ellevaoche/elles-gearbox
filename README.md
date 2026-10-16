@@ -33,6 +33,62 @@ In the source project, `package.json` contains the install list and
 labels, observed versions, and nested membership. The snapshot is not included
 in the installed VSIX.
 
+## Complete extension selection
+
+The table includes both standalone extensions and every member of the nested
+packs. Follow a Marketplace link to see an extension's description and
+requirements. "Direct entry" means this pack lists the extension explicitly;
+otherwise, the named parent pack supplies it.
+
+<!-- extension-inventory:start -->
+
+All **36 extensions** in the reference inventory:
+
+| Extension ID | Included through |
+| --- | --- |
+| [asispts.neo-git-graph](https://marketplace.visualstudio.com/items?itemName=asispts.neo-git-graph) | Direct entry |
+| [bruno-api-client.bruno](https://marketplace.visualstudio.com/items?itemName=bruno-api-client.bruno) | Direct entry |
+| [catppuccin.catppuccin-vsc](https://marketplace.visualstudio.com/items?itemName=catppuccin.catppuccin-vsc) | [catppuccin.catppuccin-vsc-pack](https://marketplace.visualstudio.com/items?itemName=catppuccin.catppuccin-vsc-pack) |
+| [catppuccin.catppuccin-vsc-icons](https://marketplace.visualstudio.com/items?itemName=catppuccin.catppuccin-vsc-icons) | [catppuccin.catppuccin-vsc-pack](https://marketplace.visualstudio.com/items?itemName=catppuccin.catppuccin-vsc-pack) |
+| [catppuccin.catppuccin-vsc-pack](https://marketplace.visualstudio.com/items?itemName=catppuccin.catppuccin-vsc-pack) | Direct entry |
+| [codezombiech.gitignore](https://marketplace.visualstudio.com/items?itemName=codezombiech.gitignore) | Direct entry |
+| [donjayamanne.githistory](https://marketplace.visualstudio.com/items?itemName=donjayamanne.githistory) | Direct entry |
+| [dooez.alt-catppuccin-vsc](https://marketplace.visualstudio.com/items?itemName=dooez.alt-catppuccin-vsc) | Direct entry |
+| [eamodio.gitlens](https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens) | Direct entry |
+| [fedaykindev.openchamber](https://marketplace.visualstudio.com/items?itemName=fedaykindev.openchamber) | Direct entry |
+| [git-ai.git-ai-vscode](https://marketplace.visualstudio.com/items?itemName=git-ai.git-ai-vscode) | Direct entry |
+| [github.vscode-github-actions](https://marketplace.visualstudio.com/items?itemName=github.vscode-github-actions) | Direct entry |
+| [gitlab.gitlab-workflow](https://marketplace.visualstudio.com/items?itemName=gitlab.gitlab-workflow) | Direct entry |
+| [golang.go](https://marketplace.visualstudio.com/items?itemName=golang.go) | Direct entry |
+| [graphql.vscode-graphql](https://marketplace.visualstudio.com/items?itemName=graphql.vscode-graphql) | Direct entry |
+| [graphql.vscode-graphql-syntax](https://marketplace.visualstudio.com/items?itemName=graphql.vscode-graphql-syntax) | Direct entry |
+| [johnpapa.vscode-peacock](https://marketplace.visualstudio.com/items?itemName=johnpapa.vscode-peacock) | Direct entry |
+| [mechatroner.rainbow-csv](https://marketplace.visualstudio.com/items?itemName=mechatroner.rainbow-csv) | Direct entry |
+| [moshfeu.compare-folders](https://marketplace.visualstudio.com/items?itemName=moshfeu.compare-folders) | Direct entry |
+| [ms-edgedevtools.vscode-edge-devtools](https://marketplace.visualstudio.com/items?itemName=ms-edgedevtools.vscode-edge-devtools) | Direct entry |
+| [ms-vscode-remote.remote-wsl](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl) | Direct entry |
+| [ms-vscode.makefile-tools](https://marketplace.visualstudio.com/items?itemName=ms-vscode.makefile-tools) | Direct entry |
+| [openai.chatgpt](https://marketplace.visualstudio.com/items?itemName=openai.chatgpt) | Direct entry |
+| [openai.codex-audio](https://marketplace.visualstudio.com/items?itemName=openai.codex-audio) | [openai.chatgpt](https://marketplace.visualstudio.com/items?itemName=openai.chatgpt) |
+| [redhat.java](https://marketplace.visualstudio.com/items?itemName=redhat.java) | [vscjava.vscode-java-pack](https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-pack) |
+| [shd101wyy.markdown-preview-enhanced](https://marketplace.visualstudio.com/items?itemName=shd101wyy.markdown-preview-enhanced) | Direct entry |
+| [vmware.vscode-boot-dev-pack](https://marketplace.visualstudio.com/items?itemName=vmware.vscode-boot-dev-pack) | Direct entry |
+| [vmware.vscode-spring-boot](https://marketplace.visualstudio.com/items?itemName=vmware.vscode-spring-boot) | [vmware.vscode-boot-dev-pack](https://marketplace.visualstudio.com/items?itemName=vmware.vscode-boot-dev-pack) |
+| [vscjava.vscode-gradle](https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-gradle) | [vscjava.vscode-java-pack](https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-pack) |
+| [vscjava.vscode-java-debug](https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-debug) | [vscjava.vscode-java-pack](https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-pack) |
+| [vscjava.vscode-java-dependency](https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-dependency) | [vscjava.vscode-java-pack](https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-pack) |
+| [vscjava.vscode-java-pack](https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-pack) | Direct entry |
+| [vscjava.vscode-java-test](https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-test) | [vscjava.vscode-java-pack](https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-pack) |
+| [vscjava.vscode-maven](https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-maven) | [vscjava.vscode-java-pack](https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-pack) |
+| [vscjava.vscode-spring-boot-dashboard](https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-spring-boot-dashboard) | [vmware.vscode-boot-dev-pack](https://marketplace.visualstudio.com/items?itemName=vmware.vscode-boot-dev-pack) |
+| [vscjava.vscode-spring-initializr](https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-spring-initializr) | [vmware.vscode-boot-dev-pack](https://marketplace.visualstudio.com/items?itemName=vmware.vscode-boot-dev-pack) |
+
+<!-- extension-inventory:end -->
+
+This table is generated from the saved inventory by `npm run sync -- ... --write`.
+`npm run validate` rejects a stale table before packaging. Upstream pack changes
+can still affect a fresh installation until the inventory is refreshed.
+
 ## Build a local VSIX
 
 Requirements: Node.js **22.14+ on the 22.x line, or 24.10+**, and npm. CI uses
@@ -190,7 +246,8 @@ npm run sync -- \
 ```
 
 This is **preview only**. It reports inventory additions/removals, changed pack
-relations, observed versions/source changes, and direct-list changes.
+relations, observed versions/source changes, direct-list changes, and whether
+the README inventory needs updating.
 
 After reviewing, repeat the same command with `--write`:
 
@@ -215,7 +272,7 @@ members, cycles, conflicting pack contents between sources, invalid registries,
 and unreadable manifests rather than writing a partial inventory.
 
 ```sh
-npm run validate      # Offline: saved snapshot versus package.json
+npm run validate      # Offline: saved snapshot versus package.json and README
 npm test              # Maintenance tests and initial selection acceptance test
 npm run sync -- --help
 ```

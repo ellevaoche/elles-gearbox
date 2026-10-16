@@ -155,6 +155,43 @@ function verifyManifest(manifest, snapshot) {
   return direct;
 }
 
+function updateReadmeInventory(readme, snapshot) {
+  const start = '<!-- extension-inventory:start -->';
+  const end = '<!-- extension-inventory:end -->';
+  requireValue(readme.split(start).length === 2 && readme.split(end).length === 2
+    && readme.indexOf(start) < readme.indexOf(end),
+  'README.md must contain exactly one ordered pair of extension-inventory markers');
+  const parents = new Map();
+  for (const extension of snapshot.extensions) {
+    for (const member of extension.extensionPack) {
+      const containingPacks = parents.get(member) ?? [];
+      containingPacks.push(extension.id);
+      parents.set(member, containingPacks);
+    }
+  }
+  const link = id => `[${id}](https://marketplace.visualstudio.com/items?itemName=${id})`;
+  const rows = snapshot.extensions.map(extension => extension.id).sort().map(id => {
+    const containingPacks = parents.get(id);
+    const includedThrough = containingPacks
+      ? containingPacks.sort().map(link).join(', ')
+      : 'Direct entry';
+    return `| ${link(id)} | ${includedThrough} |`;
+  });
+  const section = [
+    start,
+    '',
+    `All **${snapshot.extensions.length} extensions** in the reference inventory:`,
+    '',
+    '| Extension ID | Included through |',
+    '| --- | --- |',
+    ...rows,
+    '',
+    end,
+  ].join('\n');
+  return readme.slice(0, readme.indexOf(start)) + section
+    + readme.slice(readme.indexOf(end) + end.length);
+}
+
 function printChanges(previous, next, oldDirect, newDirect, log) {
   const before = new Map((previous?.extensions ?? []).map(extension => [extension.id, extension]));
   const after = new Map(next.extensions.map(extension => [extension.id, extension]));
@@ -212,11 +249,15 @@ export function run(args, directory = projectDirectory, log = console.log) {
   requireValue(!check || (!write && sources.length === 0), '--check cannot be combined with sources or --write');
   const manifestPath = path.join(directory, 'package.json');
   const snapshotPath = path.join(directory, 'extensions.snapshot.json');
+  const readmePath = path.join(directory, 'README.md');
   const manifest = readJson(manifestPath);
+  const readme = readFileSync(readmePath, 'utf8');
   const selfId = normalizeId(`${manifest.publisher}.${manifest.name}`);
   if (check) {
     const snapshot = readJson(snapshotPath);
     const direct = verifyManifest(manifest, snapshot);
+    requireValue(readme === updateReadmeInventory(readme, snapshot),
+      'README.md inventory is out of date; review npm run sync with all sources and --write');
     log(`Valid: ${snapshot.extensions.length} inventory entries, ${direct.length} direct, ${snapshot.extensions.length - direct.length} indirect.`);
     return;
   }
@@ -236,12 +277,19 @@ export function run(args, directory = projectDirectory, log = console.log) {
   const direct = compactEntries(snapshot, selfId);
   const updatedManifest = { ...manifest, extensionPack: direct };
   verifyManifest(updatedManifest, snapshot);
+  const updatedReadme = updateReadmeInventory(readme, snapshot);
   printChanges(previous, snapshot, manifest.extensionPack, direct, log);
-  const changed = !same(previous, snapshot) || !same(manifest.extensionPack, direct);
+  if (readme !== updatedReadme) log('~ README extension inventory');
+  const changed = !same(previous, snapshot) || !same(manifest.extensionPack, direct)
+    || readme !== updatedReadme;
   log(`${snapshot.extensions.length} inventory entries, ${direct.length} direct, ${snapshot.extensions.length - direct.length} indirect.`);
   if (write) {
-    writeOutputs([[snapshotPath, json(snapshot)], [manifestPath, json(updatedManifest)]]);
-    log(changed ? 'Updated snapshot and pack membership.' : 'No changes.');
+    writeOutputs([
+      [snapshotPath, json(snapshot)],
+      [manifestPath, json(updatedManifest)],
+      [readmePath, updatedReadme],
+    ]);
+    log(changed ? 'Updated snapshot, pack membership and README inventory.' : 'No changes.');
   } else log(changed ? 'Preview only. Repeat with --write to apply these changes.' : 'No changes. Preview only.');
 }
 

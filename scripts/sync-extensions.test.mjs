@@ -21,6 +21,8 @@ function fixture(t) {
     extensionPack: [],
   };
   writeFileSync(path.join(directory, 'package.json'), JSON.stringify(manifest));
+  writeFileSync(path.join(directory, 'README.md'),
+    '# Test pack\n\n<!-- extension-inventory:start -->\n<!-- extension-inventory:end -->\n');
   function source(label, extensions) {
     const root = path.join(directory, label);
     mkdirSync(root, { recursive: true });
@@ -146,18 +148,29 @@ test('previews without writes, explicitly writes, validates and regenerates iden
   const args = ['--source', `wsl=${input.file}`];
   const manifestPath = path.join(directory, 'package.json');
   const snapshotPath = path.join(directory, 'extensions.snapshot.json');
+  const readmePath = path.join(directory, 'README.md');
   const original = readFileSync(manifestPath, 'utf8');
+  const originalReadme = readFileSync(readmePath, 'utf8');
   const messages = [];
   run(args, directory, message => messages.push(message));
   assert.equal(readFileSync(manifestPath, 'utf8'), original);
+  assert.equal(readFileSync(readmePath, 'utf8'), originalReadme);
   assert.throws(() => readFileSync(snapshotPath), /ENOENT/);
   assert.ok(messages.some(message => message.startsWith('+ inventory p.child')));
   run([...args, '--write'], directory, () => {});
-  const saved = [readFileSync(manifestPath, 'utf8'), readFileSync(snapshotPath, 'utf8')];
+  const saved = [readFileSync(manifestPath, 'utf8'), readFileSync(snapshotPath, 'utf8'),
+    readFileSync(readmePath, 'utf8')];
+  assert.match(saved[2], /All \*\*2 extensions\*\*/);
+  assert.match(saved[2], /\| \[p.child\]\(https:\/\/marketplace.visualstudio.com\/items\?itemName=p.child\) \| \[p.pack\]/);
+  assert.match(saved[2], /\| \[p.pack\].* \| Direct entry \|/);
   run(['--check'], directory, () => {});
   run(args, directory, () => {});
   run([...args, '--write'], directory, () => {});
-  assert.deepEqual([readFileSync(manifestPath, 'utf8'), readFileSync(snapshotPath, 'utf8')], saved);
+  assert.deepEqual([readFileSync(manifestPath, 'utf8'), readFileSync(snapshotPath, 'utf8'),
+    readFileSync(readmePath, 'utf8')], saved);
+  writeFileSync(readmePath, saved[2].replace('All **2 extensions**', 'All **99 extensions**'));
+  assert.throws(() => run(['--check'], directory, () => {}), /README.md inventory is out of date/);
+  writeFileSync(readmePath, saved[2]);
   const manifest = JSON.parse(saved[0]);
   manifest.extensionPack.push('p.child');
   writeFileSync(manifestPath, JSON.stringify(manifest));
@@ -183,12 +196,29 @@ test('requires all previously captured sources and leaves both files intact on i
   const wsl = source('wsl', [{ id: 'p.two' }]);
   const args = ['--source', `windows=${windows.file}`, '--source', `wsl=${wsl.file}`];
   run([...args, '--write'], directory, () => {});
-  const files = ['package.json', 'extensions.snapshot.json'].map(file => path.join(directory, file));
+  const files = ['package.json', 'extensions.snapshot.json', 'README.md'].map(file => path.join(directory, file));
   const before = files.map(file => readFileSync(file, 'utf8'));
   assert.throws(() => run(['--source', `wsl=${wsl.file}`, '--write'], directory, () => {}), /Missing previously captured source/);
   writeFileSync(wsl.file, '{}');
   assert.throws(() => run([...args, '--write'], directory, () => {}), /registry array/);
   assert.deepEqual(files.map(file => readFileSync(file, 'utf8')), before);
+});
+
+test('rejects missing, duplicate and reversed README markers before writing outputs', t => {
+  const { directory, source } = fixture(t);
+  const input = source('wsl', [{ id: 'p.one' }]);
+  const manifestPath = path.join(directory, 'package.json');
+  const original = readFileSync(manifestPath, 'utf8');
+  for (const content of [
+    '# No markers',
+    '<!-- extension-inventory:end --><!-- extension-inventory:start -->',
+    '<!-- extension-inventory:start --><!-- extension-inventory:start --><!-- extension-inventory:end -->',
+  ]) {
+    writeFileSync(path.join(directory, 'README.md'), content);
+    assert.throws(() => run(['--source', `wsl=${input.file}`, '--write'], directory, () => {}), /ordered pair/);
+    assert.equal(readFileSync(manifestPath, 'utf8'), original);
+    assert.throws(() => readFileSync(path.join(directory, 'extensions.snapshot.json')), /ENOENT/);
+  }
 });
 
 test('rejects unsupported CLI options and incompatible modes', t => {
@@ -202,6 +232,14 @@ test('approved project contains 36 entries covered by 24 direct entries and four
   const root = fileURLToPath(new URL('../', import.meta.url));
   const saved = JSON.parse(readFileSync(path.join(root, 'extensions.snapshot.json'), 'utf8'));
   const manifest = JSON.parse(readFileSync(path.join(root, 'package.json'), 'utf8'));
+  const readme = readFileSync(path.join(root, 'README.md'), 'utf8');
+  const table = readme.split('<!-- extension-inventory:start -->')[1]
+    .split('<!-- extension-inventory:end -->')[0];
+  const rows = table.split('\n').filter(line => line.startsWith('| ['));
+  assert.equal(rows.length, saved.extensions.length);
+  for (const entry of saved.extensions) {
+    assert.equal(rows.filter(row => row.startsWith(`| [${entry.id}](`)).length, 1);
+  }
   assert.equal(manifest.name, 'elles-gearbox');
   assert.equal(manifest.displayName, "Elle's Gearbox");
   assert.equal(manifest.icon, 'assets/icon.png');
