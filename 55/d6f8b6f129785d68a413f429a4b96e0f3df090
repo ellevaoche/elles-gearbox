@@ -1,0 +1,24 @@
+scripts/sync-extensions.test.mjs
+  s_706a20caf42ef1::t_449371dbaa0a22 24-25,151,153,157,161-165,169-173,199,207-223,235-242
+scripts/sync-extensions.mjs
+  s_706a20caf42ef1::t_449371dbaa0a22 158-194,252,254,259-260,280,282-284,287-292
+README.md
+  s_706a20caf42ef1::t_449371dbaa0a22 36-43,86-91,249-250,275
+  s_706a20caf42ef1::t_82ffd26874b85b 44-85
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "55d6f8b6f129785d68a413f429a4b96e0f3df090",
+  "prompts": {},
+  "sessions": {
+    "s_706a20caf42ef1": {
+      "agent_id": {
+        "tool": "github-copilot-cli",
+        "id": "62c05662-039b-43e7-a080-2c0b4121e815",
+        "model": "unknown"
+      },
+      "human_author": "Elmar Meuthen <2647545+ellevaoche@users.noreply.github.com>"
+    }
+  }
+}
