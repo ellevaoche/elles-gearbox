@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256">
+  <title>Elle's Gearbox</title>
+  <desc>An orange toolbox with a cream bicycle sprocket on a deep petrol background.</desc>
+  <rect width="256" height="256" rx="48" fill="#142F35"/>
+  <path d="M94 81V66c0-8 6-14 14-14h40c8 0 14 6 14 14v15"
+    fill="none" stroke="#F8EBD5" stroke-width="12" stroke-linejoin="round"/>
+  <rect x="40" y="81" width="176" height="124" rx="18" fill="#F5A34B"/>
+  <path d="M40 124h176" fill="none" stroke="#142F35" stroke-width="8"/>
+  <rect x="65" y="115" width="16" height="24" rx="4" fill="#F8EBD5"/>
+  <g transform="translate(151 158)" fill="#F8EBD5">
+    <rect x="-8" y="-46" width="16" height="92" rx="3"/>
+    <rect x="-8" y="-46" width="16" height="92" rx="3" transform="rotate(45)"/>
+    <rect x="-8" y="-46" width="16" height="92" rx="3" transform="rotate(90)"/>
+    <rect x="-8" y="-46" width="16" height="92" rx="3" transform="rotate(135)"/>
+    <circle r="37"/>
+    <circle r="23" fill="#142F35"/>
+    <path d="M0-23V23M-23 0H23" fill="none" stroke="#F8EBD5" stroke-width="7"/>
+    <circle r="10"/>
+    <circle r="4" fill="#142F35"/>
+  </g>
+</svg>

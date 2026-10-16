@@ -1,0 +1,12 @@
+.vscode/**
+.github/**
+.releaserc.json
+.gitignore
+.vscodeignore
+node_modules/**
+scripts/**
+extensions.snapshot.json
+package-lock.json
+assets/*.svg
+*.vsix
+*.sync-tmp

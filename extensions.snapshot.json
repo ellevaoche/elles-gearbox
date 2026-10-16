@@ -1,0 +1,413 @@
+{
+  "schemaVersion": 1,
+  "extensions": [
+    {
+      "id": "asispts.neo-git-graph",
+      "installations": [
+        {
+          "source": "wsl",
+          "version": "0.6.0"
+        }
+      ],
+      "extensionPack": []
+    },
+    {
+      "id": "bruno-api-client.bruno",
+      "installations": [
+        {
+          "source": "wsl",
+          "version": "6.0.0"
+        }
+      ],
+      "extensionPack": []
+    },
+    {
+      "id": "catppuccin.catppuccin-vsc",
+      "installations": [
+        {
+          "source": "windows",
+          "version": "3.19.0"
+        },
+        {
+          "source": "wsl",
+          "version": "3.19.0"
+        }
+      ],
+      "extensionPack": []
+    },
+    {
+      "id": "catppuccin.catppuccin-vsc-icons",
+      "installations": [
+        {
+          "source": "windows",
+          "version": "1.26.0"
+        },
+        {
+          "source": "wsl",
+          "version": "1.26.0"
+        }
+      ],
+      "extensionPack": []
+    },
+    {
+      "id": "catppuccin.catppuccin-vsc-pack",
+      "installations": [
+        {
+          "source": "windows",
+          "version": "1.0.2"
+        },
+        {
+          "source": "wsl",
+          "version": "1.0.2"
+        }
+      ],
+      "extensionPack": [
+        "catppuccin.catppuccin-vsc",
+        "catppuccin.catppuccin-vsc-icons"
+      ]
+    },
+    {
+      "id": "codezombiech.gitignore",
+      "installations": [
+        {
+          "source": "wsl",
+          "version": "0.10.0"
+        }
+      ],
+      "extensionPack": []
+    },
+    {
+      "id": "donjayamanne.githistory",
+      "installations": [
+        {
+          "source": "wsl",
+          "version": "0.6.20"
+        }
+      ],
+      "extensionPack": []
+    },
+    {
+      "id": "dooez.alt-catppuccin-vsc",
+      "installations": [
+        {
+          "source": "windows",
+          "version": "2.7.4"
+        }
+      ],
+      "extensionPack": []
+    },
+    {
+      "id": "eamodio.gitlens",
+      "installations": [
+        {
+          "source": "wsl",
+          "version": "19.3.0"
+        }
+      ],
+      "extensionPack": []
+    },
+    {
+      "id": "fedaykindev.openchamber",
+      "installations": [
+        {
+          "source": "wsl",
+          "version": "2.3.3"
+        }
+      ],
+      "extensionPack": []
+    },
+    {
+      "id": "git-ai.git-ai-vscode",
+      "installations": [
+        {
+          "source": "wsl",
+          "version": "0.1.22"
+        }
+      ],
+      "extensionPack": []
+    },
+    {
+      "id": "github.vscode-github-actions",
+      "installations": [
+        {
+          "source": "wsl",
+          "version": "0.32.3"
+        }
+      ],
+      "extensionPack": []
+    },
+    {
+      "id": "gitlab.gitlab-workflow",
+      "installations": [
+        {
+          "source": "wsl",
+          "version": "7.2.3"
+        }
+      ],
+      "extensionPack": []
+    },
+    {
+      "id": "golang.go",
+      "installations": [
+        {
+          "source": "wsl",
+          "version": "0.56.1"
+        }
+      ],
+      "extensionPack": []
+    },
+    {
+      "id": "graphql.vscode-graphql",
+      "installations": [
+        {
+          "source": "wsl",
+          "version": "0.13.4"
+        }
+      ],
+      "extensionPack": []
+    },
+    {
+      "id": "graphql.vscode-graphql-syntax",
+      "installations": [
+        {
+          "source": "windows",
+          "version": "1.3.13"
+        },
+        {
+          "source": "wsl",
+          "version": "1.3.13"
+        }
+      ],
+      "extensionPack": []
+    },
+    {
+      "id": "johnpapa.vscode-peacock",
+      "installations": [
+        {
+          "source": "windows",
+          "version": "4.5.1"
+        },
+        {
+          "source": "wsl",
+          "version": "4.5.1"
+        }
+      ],
+      "extensionPack": []
+    },
+    {
+      "id": "mechatroner.rainbow-csv",
+      "installations": [
+        {
+          "source": "wsl",
+          "version": "3.24.1"
+        }
+      ],
+      "extensionPack": []
+    },
+    {
+      "id": "moshfeu.compare-folders",
+      "installations": [
+        {
+          "source": "windows",
+          "version": "0.30.0"
+        },
+        {
+          "source": "wsl",
+          "version": "0.30.0"
+        }
+      ],
+      "extensionPack": []
+    },
+    {
+      "id": "ms-edgedevtools.vscode-edge-devtools",
+      "installations": [
+        {
+          "source": "windows",
+          "version": "2.1.12"
+        }
+      ],
+      "extensionPack": []
+    },
+    {
+      "id": "ms-vscode-remote.remote-wsl",
+      "installations": [
+        {
+          "source": "windows",
+          "version": "0.104.3"
+        }
+      ],
+      "extensionPack": []
+    },
+    {
+      "id": "ms-vscode.makefile-tools",
+      "installations": [
+        {
+          "source": "wsl",
+          "version": "0.12.17"
+        }
+      ],
+      "extensionPack": []
+    },
+    {
+      "id": "openai.chatgpt",
+      "installations": [
+        {
+          "source": "wsl",
+          "version": "26.1007.21434"
+        }
+      ],
+      "extensionPack": [
+        "openai.codex-audio"
+      ]
+    },
+    {
+      "id": "openai.codex-audio",
+      "installations": [
+        {
+          "source": "windows",
+          "version": "26.1007.21434"
+        },
+        {
+          "source": "wsl",
+          "version": "26.1007.21434"
+        }
+      ],
+      "extensionPack": []
+    },
+    {
+      "id": "redhat.java",
+      "installations": [
+        {
+          "source": "wsl",
+          "version": "1.57.0"
+        }
+      ],
+      "extensionPack": []
+    },
+    {
+      "id": "shd101wyy.markdown-preview-enhanced",
+      "installations": [
+        {
+          "source": "windows",
+          "version": "0.8.40"
+        },
+        {
+          "source": "wsl",
+          "version": "0.8.40"
+        }
+      ],
+      "extensionPack": []
+    },
+    {
+      "id": "vmware.vscode-boot-dev-pack",
+      "installations": [
+        {
+          "source": "wsl",
+          "version": "0.2.2"
+        }
+      ],
+      "extensionPack": [
+        "vmware.vscode-spring-boot",
+        "vscjava.vscode-spring-boot-dashboard",
+        "vscjava.vscode-spring-initializr"
+      ]
+    },
+    {
+      "id": "vmware.vscode-spring-boot",
+      "installations": [
+        {
+          "source": "wsl",
+          "version": "2.4.1"
+        }
+      ],
+      "extensionPack": []
+    },
+    {
+      "id": "vscjava.vscode-gradle",
+      "installations": [
+        {
+          "source": "wsl",
+          "version": "3.18.1"
+        }
+      ],
+      "extensionPack": []
+    },
+    {
+      "id": "vscjava.vscode-java-debug",
+      "installations": [
+        {
+          "source": "wsl",
+          "version": "0.60.0"
+        }
+      ],
+      "extensionPack": []
+    },
+    {
+      "id": "vscjava.vscode-java-dependency",
+      "installations": [
+        {
+          "source": "wsl",
+          "version": "0.27.7"
+        }
+      ],
+      "extensionPack": []
+    },
+    {
+      "id": "vscjava.vscode-java-pack",
+      "installations": [
+        {
+          "source": "wsl",
+          "version": "0.31.2"
+        }
+      ],
+      "extensionPack": [
+        "redhat.java",
+        "vscjava.vscode-gradle",
+        "vscjava.vscode-java-debug",
+        "vscjava.vscode-java-dependency",
+        "vscjava.vscode-java-test",
+        "vscjava.vscode-maven"
+      ]
+    },
+    {
+      "id": "vscjava.vscode-java-test",
+      "installations": [
+        {
+          "source": "wsl",
+          "version": "0.47.0"
+        }
+      ],
+      "extensionPack": []
+    },
+    {
+      "id": "vscjava.vscode-maven",
+      "installations": [
+        {
+          "source": "wsl",
+          "version": "0.46.0"
+        }
+      ],
+      "extensionPack": []
+    },
+    {
+      "id": "vscjava.vscode-spring-boot-dashboard",
+      "installations": [
+        {
+          "source": "wsl",
+          "version": "0.15.0"
+        }
+      ],
+      "extensionPack": []
+    },
+    {
+      "id": "vscjava.vscode-spring-initializr",
+      "installations": [
+        {
+          "source": "wsl",
+          "version": "0.12.0"
+        }
+      ],
+      "extensionPack": []
+    }
+  ]
+}

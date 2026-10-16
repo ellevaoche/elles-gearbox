@@ -1,0 +1,69 @@
+{
+  "name": "elles-gearbox",
+  "displayName": "Elle's Gearbox",
+  "icon": "assets/icon.png",
+  "description": "A hand-picked VS Code toolkit for a setup that feels like home, with nested packs for Windows and WSL.",
+  "version": "0.1.0",
+  "publisher": "elmar-local",
+  "private": true,
+  "license": "MIT",
+  "author": "Elmar Meuthen",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ellevaoche/elles-gearbox.git"
+  },
+  "homepage": "https://github.com/ellevaoche/elles-gearbox#readme",
+  "bugs": {
+    "url": "https://github.com/ellevaoche/elles-gearbox/issues"
+  },
+  "engines": {
+    "vscode": "^1.85.0",
+    "node": "^22.14.0 || >=24.10.0"
+  },
+  "categories": [
+    "Extension Packs"
+  ],
+  "extensionPack": [
+    "asispts.neo-git-graph",
+    "bruno-api-client.bruno",
+    "catppuccin.catppuccin-vsc-pack",
+    "codezombiech.gitignore",
+    "donjayamanne.githistory",
+    "dooez.alt-catppuccin-vsc",
+    "eamodio.gitlens",
+    "fedaykindev.openchamber",
+    "git-ai.git-ai-vscode",
+    "github.vscode-github-actions",
+    "gitlab.gitlab-workflow",
+    "golang.go",
+    "graphql.vscode-graphql",
+    "graphql.vscode-graphql-syntax",
+    "johnpapa.vscode-peacock",
+    "mechatroner.rainbow-csv",
+    "moshfeu.compare-folders",
+    "ms-edgedevtools.vscode-edge-devtools",
+    "ms-vscode-remote.remote-wsl",
+    "ms-vscode.makefile-tools",
+    "openai.chatgpt",
+    "shd101wyy.markdown-preview-enhanced",
+    "vmware.vscode-boot-dev-pack",
+    "vscjava.vscode-java-pack"
+  ],
+  "scripts": {
+    "test": "node --test scripts/*.test.mjs",
+    "validate": "node scripts/sync-extensions.mjs --check",
+    "sync": "node scripts/sync-extensions.mjs",
+    "package": "npm run validate && vsce package --no-dependencies",
+    "release": "semantic-release"
+  },
+  "devDependencies": {
+    "@semantic-release/commit-analyzer": "13.0.1",
+    "@semantic-release/exec": "7.1.0",
+    "@semantic-release/github": "12.0.10",
+    "@semantic-release/npm": "13.2.0",
+    "@semantic-release/release-notes-generator": "14.1.1",
+    "@vscode/vsce": "4.0.0",
+    "conventional-changelog-conventionalcommits": "8.0.0",
+    "semantic-release": "25.0.9"
+  }
+}
