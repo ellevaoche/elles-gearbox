@@ -1,0 +1,21 @@
+scripts/release.test.mjs
+  s_706a20caf42ef1::t_4dd8221c0b6134 63-64,66-68
+.releaserc.json
+  s_706a20caf42ef1::t_4dd8221c0b6134 27,35-36
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "7bd239be0fb79ff431d4bc050f6a7be6704e92f9",
+  "prompts": {},
+  "sessions": {
+    "s_706a20caf42ef1": {
+      "agent_id": {
+        "tool": "github-copilot-cli",
+        "id": "62c05662-039b-43e7-a080-2c0b4121e815",
+        "model": "unknown"
+      },
+      "human_author": "Elmar Meuthen <2647545+ellevaoche@users.noreply.github.com>"
+    }
+  }
+}
