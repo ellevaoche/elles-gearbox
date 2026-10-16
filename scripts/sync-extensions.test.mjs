@@ -168,6 +168,11 @@ test('previews without writes, explicitly writes, validates and regenerates iden
   run([...args, '--write'], directory, () => {});
   assert.deepEqual([readFileSync(manifestPath, 'utf8'), readFileSync(snapshotPath, 'utf8'),
     readFileSync(readmePath, 'utf8')], saved);
+  const windowsReadme = saved[2].replaceAll('\n', '\r\n');
+  writeFileSync(readmePath, windowsReadme);
+  run(['--check'], directory, () => {});
+  run([...args, '--write'], directory, () => {});
+  assert.equal(readFileSync(readmePath, 'utf8'), windowsReadme);
   writeFileSync(readmePath, saved[2].replace('All **2 extensions**', 'All **99 extensions**'));
   assert.throws(() => run(['--check'], directory, () => {}), /README.md inventory is out of date/);
   writeFileSync(readmePath, saved[2]);

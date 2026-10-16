@@ -187,7 +187,7 @@ function updateReadmeInventory(readme, snapshot) {
     ...rows,
     '',
     end,
-  ].join('\n');
+  ].join(readme.includes('\r\n') ? '\r\n' : '\n');
   return readme.slice(0, readme.indexOf(start)) + section
     + readme.slice(readme.indexOf(end) + end.length);
 }
