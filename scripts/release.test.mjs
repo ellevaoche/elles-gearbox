@@ -60,9 +60,12 @@ test('release prepares the version before packaging and publishes only the exact
   assert.ok(names.indexOf('@semantic-release/npm') < names.indexOf('@semantic-release/exec'));
   assert.ok(names.indexOf('@semantic-release/exec') < names.indexOf('@semantic-release/github'));
   assert.equal(config.plugins.find(([name]) => name === '@semantic-release/npm')[1].npmPublish, false);
-  assert.equal(config.plugins.find(([name]) => name === '@semantic-release/exec')[1].prepareCmd, 'npm run package');
+  assert.equal(config.plugins.find(([name]) => name === '@semantic-release/exec')[1].prepareCmd,
+    'npm run package -- --out elles-gearbox.vsix');
   const github = config.plugins.find(([name]) => name === '@semantic-release/github')[1];
-  assert.equal(github.assets[0].path, 'elles-gearbox-${nextRelease.version}.vsix');
+  assert.equal(github.assets[0].path, 'elles-gearbox.vsix');
+  assert.equal(github.assets[0].name, 'elles-gearbox-${nextRelease.version}.vsix');
+  assert.ok(!github.assets[0].path.includes('${'));
   assert.equal(github.successComment, false);
   assert.equal(github.failComment, false);
   assert.equal(github.releasedLabels, false);

@@ -24,7 +24,7 @@
     [
       "@semantic-release/exec",
       {
-        "prepareCmd": "npm run package"
+        "prepareCmd": "npm run package -- --out elles-gearbox.vsix"
       }
     ],
     [
@@ -32,7 +32,8 @@
       {
         "assets": [
           {
-            "path": "elles-gearbox-${nextRelease.version}.vsix",
+            "path": "elles-gearbox.vsix",
+            "name": "elles-gearbox-${nextRelease.version}.vsix",
             "label": "Elle's Gearbox ${nextRelease.version} (VSIX)"
           }
         ],
