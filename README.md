@@ -8,9 +8,9 @@ A personal, declarative VS Code extension pack for a Windows and WSL development
 setup. Install one pack to request the extension selection; no extension runtime
 or activation code is included.
 
-The initial inventory contains **36 distinct extensions** from the default
-profile: 11 on Windows and 33 in WSL, with overlap. The manifest has **24 direct
-entries**; another **12 extensions** are supplied through nested packs.
+The current inventory contains **40 distinct extensions** from the default
+profile: 11 on Windows and 37 in WSL, with overlap. The manifest has **25 direct
+entries**; another **15 extensions** are supplied through nested packs.
 
 ## Nested packs
 
@@ -22,6 +22,7 @@ VS Code resolves `extensionPack` entries recursively. This pack includes:
 | Extension Pack for Java | Java language support, debugger, tests, Maven, Gradle, and project manager |
 | Spring Boot Extension Pack | Spring Boot tools, Initializr, and dashboard |
 | OpenAI ChatGPT/Codex extension | Codex audio |
+| Python | Python Debugger, Pylance, and Python Environments |
 
 An extension can provide functionality and also declare pack members. The OpenAI
 extension is retained for both purposes. Members are not redundantly listed at
@@ -42,7 +43,7 @@ otherwise, the named parent pack supplies it.
 
 <!-- extension-inventory:start -->
 
-All **36 extensions** in the reference inventory:
+All **40 extensions** in the reference inventory:
 
 | Extension ID | Included through |
 | --- | --- |
@@ -66,6 +67,10 @@ All **36 extensions** in the reference inventory:
 | [mechatroner.rainbow-csv](https://marketplace.visualstudio.com/items?itemName=mechatroner.rainbow-csv) | Direct entry |
 | [moshfeu.compare-folders](https://marketplace.visualstudio.com/items?itemName=moshfeu.compare-folders) | Direct entry |
 | [ms-edgedevtools.vscode-edge-devtools](https://marketplace.visualstudio.com/items?itemName=ms-edgedevtools.vscode-edge-devtools) | Direct entry |
+| [ms-python.debugpy](https://marketplace.visualstudio.com/items?itemName=ms-python.debugpy) | [ms-python.python](https://marketplace.visualstudio.com/items?itemName=ms-python.python) |
+| [ms-python.python](https://marketplace.visualstudio.com/items?itemName=ms-python.python) | Direct entry |
+| [ms-python.vscode-pylance](https://marketplace.visualstudio.com/items?itemName=ms-python.vscode-pylance) | [ms-python.python](https://marketplace.visualstudio.com/items?itemName=ms-python.python) |
+| [ms-python.vscode-python-envs](https://marketplace.visualstudio.com/items?itemName=ms-python.vscode-python-envs) | [ms-python.python](https://marketplace.visualstudio.com/items?itemName=ms-python.python) |
 | [ms-vscode-remote.remote-wsl](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl) | Direct entry |
 | [ms-vscode.makefile-tools](https://marketplace.visualstudio.com/items?itemName=ms-vscode.makefile-tools) | Direct entry |
 | [openai.chatgpt](https://marketplace.visualstudio.com/items?itemName=openai.chatgpt) | Direct entry |
@@ -228,7 +233,7 @@ For the default profile, typical registry locations are:
 - WSL: `~/.vscode-server/extensions/extensions.json`
 - Local Linux: `~/.vscode/extensions/extensions.json`
 
-The initial selection uses the Windows and WSL **default profile**. Do not point
+The selection uses the Windows and WSL **default profile**. Do not point
 the script at a shared registry when you intend to select only a different
 profile's subset. Supply the correct profile registry, with resolvable installed
 manifest locations, or prepare a filtered registry first. `code --list-extensions
@@ -273,11 +278,11 @@ and unreadable manifests rather than writing a partial inventory.
 
 ```sh
 npm run validate      # Offline: saved snapshot versus package.json and README
-npm test              # Maintenance tests and initial selection acceptance test
+npm test              # Maintenance tests and current selection acceptance test
 npm run sync -- --help
 ```
 
-The initial acceptance test deliberately asserts **36 / 24 / 12** and the four
+The selection acceptance test deliberately asserts **40 / 25 / 15** and the five
 nested parents. When intentionally changing the selection, review and update
 that test along with the snapshot and manifest. Future extension versions can
 change pack membership, so those counts are not permanent product limits.
@@ -327,7 +332,7 @@ code --user-data-dir "$test_dir/user-data" \
   --list-extensions
 ```
 
-Compare the result case-insensitively against the 36 snapshot IDs, plus
+Compare the result case-insensitively against the 40 snapshot IDs, plus
 `elmar-local.elles-gearbox`. Investigate missing entries and review any
 extra dependencies or newer upstream pack members; do not infer success only
 from the top-level pack being installed. Test Windows/WSL placement separately

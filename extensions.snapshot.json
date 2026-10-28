@@ -101,7 +101,7 @@
       "installations": [
         {
           "source": "wsl",
-          "version": "19.3.0"
+          "version": "19.4.0"
         }
       ],
       "extensionPack": []
@@ -111,7 +111,7 @@
       "installations": [
         {
           "source": "wsl",
-          "version": "2.3.3"
+          "version": "2.5.2"
         }
       ],
       "extensionPack": []
@@ -141,7 +141,7 @@
       "installations": [
         {
           "source": "wsl",
-          "version": "7.2.3"
+          "version": "7.3.0"
         }
       ],
       "extensionPack": []
@@ -151,7 +151,7 @@
       "installations": [
         {
           "source": "wsl",
-          "version": "0.56.1"
+          "version": "0.58.0"
         }
       ],
       "extensionPack": []
@@ -223,7 +223,51 @@
       "installations": [
         {
           "source": "windows",
-          "version": "2.1.12"
+          "version": "2.1.13"
+        }
+      ],
+      "extensionPack": []
+    },
+    {
+      "id": "ms-python.debugpy",
+      "installations": [
+        {
+          "source": "wsl",
+          "version": "2026.6.0"
+        }
+      ],
+      "extensionPack": []
+    },
+    {
+      "id": "ms-python.python",
+      "installations": [
+        {
+          "source": "wsl",
+          "version": "2026.10.0"
+        }
+      ],
+      "extensionPack": [
+        "ms-python.debugpy",
+        "ms-python.vscode-pylance",
+        "ms-python.vscode-python-envs"
+      ]
+    },
+    {
+      "id": "ms-python.vscode-pylance",
+      "installations": [
+        {
+          "source": "wsl",
+          "version": "2026.4.1"
+        }
+      ],
+      "extensionPack": []
+    },
+    {
+      "id": "ms-python.vscode-python-envs",
+      "installations": [
+        {
+          "source": "wsl",
+          "version": "1.40.0"
         }
       ],
       "extensionPack": []
@@ -233,7 +277,7 @@
       "installations": [
         {
           "source": "windows",
-          "version": "0.104.3"
+          "version": "1.104.6"
         }
       ],
       "extensionPack": []
@@ -253,7 +297,7 @@
       "installations": [
         {
           "source": "wsl",
-          "version": "26.1007.21434"
+          "version": "26.1021.22027"
         }
       ],
       "extensionPack": [
@@ -265,11 +309,11 @@
       "installations": [
         {
           "source": "windows",
-          "version": "26.1007.21434"
+          "version": "26.1021.22027"
         },
         {
           "source": "wsl",
-          "version": "26.1007.21434"
+          "version": "26.1021.22027"
         }
       ],
       "extensionPack": []
@@ -279,7 +323,7 @@
       "installations": [
         {
           "source": "wsl",
-          "version": "1.57.0"
+          "version": "1.58.0"
         }
       ],
       "extensionPack": []
@@ -404,7 +448,7 @@
       "installations": [
         {
           "source": "wsl",
-          "version": "0.12.0"
+          "version": "0.12.1"
         }
       ],
       "extensionPack": []
