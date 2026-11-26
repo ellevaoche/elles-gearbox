@@ -233,7 +233,7 @@ test('rejects unsupported CLI options and incompatible modes', t => {
   }
 });
 
-test('approved project contains 40 entries covered by 25 direct entries and five nested parents', () => {
+test('approved project contains 45 entries covered by 30 direct entries and five nested parents', () => {
   const root = fileURLToPath(new URL('../', import.meta.url));
   const saved = JSON.parse(readFileSync(path.join(root, 'extensions.snapshot.json'), 'utf8'));
   const manifest = JSON.parse(readFileSync(path.join(root, 'package.json'), 'utf8'));
@@ -254,8 +254,8 @@ test('approved project contains 40 entries covered by 25 direct entries and five
   assert.equal(icon.readUInt32BE(20), 256);
   assert.equal(`${manifest.publisher}.${manifest.name}`, selfId);
   const direct = compactEntries(saved, selfId);
-  assert.equal(saved.extensions.length, 40);
-  assert.equal(direct.length, 25);
+  assert.equal(saved.extensions.length, 45);
+  assert.equal(direct.length, 30);
   assert.equal(saved.extensions.length - direct.length, 15);
   assert.deepEqual(manifest.extensionPack, direct);
   const parents = saved.extensions.filter(entry => entry.extensionPack.length > 0);
@@ -271,7 +271,7 @@ test('approved project contains 40 entries covered by 25 direct entries and five
     'ms-python.debugpy', 'ms-python.vscode-pylance', 'ms-python.vscode-python-envs',
   ]);
   assert.equal(saved.extensions.filter(entry =>
-    entry.installations.some(installation => installation.source === 'windows')).length, 11);
+    entry.installations.some(installation => installation.source === 'windows')).length, 14);
   assert.equal(saved.extensions.filter(entry =>
-    entry.installations.some(installation => installation.source === 'wsl')).length, 37);
+    entry.installations.some(installation => installation.source === 'wsl')).length, 39);
 });

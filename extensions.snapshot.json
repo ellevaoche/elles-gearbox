@@ -16,7 +16,7 @@
       "installations": [
         {
           "source": "wsl",
-          "version": "6.0.0"
+          "version": "6.1.0"
         }
       ],
       "extensionPack": []
@@ -101,7 +101,7 @@
       "installations": [
         {
           "source": "wsl",
-          "version": "19.4.0"
+          "version": "19.7.0"
         }
       ],
       "extensionPack": []
@@ -111,7 +111,7 @@
       "installations": [
         {
           "source": "wsl",
-          "version": "2.5.2"
+          "version": "2.8.0"
         }
       ],
       "extensionPack": []
@@ -137,11 +137,21 @@
       "extensionPack": []
     },
     {
+      "id": "github.vscode-pull-request-github",
+      "installations": [
+        {
+          "source": "wsl",
+          "version": "0.182.0"
+        }
+      ],
+      "extensionPack": []
+    },
+    {
       "id": "gitlab.gitlab-workflow",
       "installations": [
         {
           "source": "wsl",
-          "version": "7.3.0"
+          "version": "7.7.1"
         }
       ],
       "extensionPack": []
@@ -161,7 +171,7 @@
       "installations": [
         {
           "source": "wsl",
-          "version": "0.13.4"
+          "version": "1.0.1"
         }
       ],
       "extensionPack": []
@@ -181,6 +191,16 @@
       "extensionPack": []
     },
     {
+      "id": "jdinhlife.gruvbox",
+      "installations": [
+        {
+          "source": "windows",
+          "version": "1.29.2"
+        }
+      ],
+      "extensionPack": []
+    },
+    {
       "id": "johnpapa.vscode-peacock",
       "installations": [
         {
@@ -190,6 +210,16 @@
         {
           "source": "wsl",
           "version": "4.5.1"
+        }
+      ],
+      "extensionPack": []
+    },
+    {
+      "id": "jonathanharty.gruvbox-material-icon-theme",
+      "installations": [
+        {
+          "source": "windows",
+          "version": "1.1.5"
         }
       ],
       "extensionPack": []
@@ -223,7 +253,7 @@
       "installations": [
         {
           "source": "windows",
-          "version": "2.1.13"
+          "version": "2.1.14"
         }
       ],
       "extensionPack": []
@@ -267,7 +297,7 @@
       "installations": [
         {
           "source": "wsl",
-          "version": "1.40.0"
+          "version": "1.44.0"
         }
       ],
       "extensionPack": []
@@ -277,7 +307,7 @@
       "installations": [
         {
           "source": "windows",
-          "version": "1.104.6"
+          "version": "1.104.7"
         }
       ],
       "extensionPack": []
@@ -297,7 +327,7 @@
       "installations": [
         {
           "source": "wsl",
-          "version": "26.1021.22027"
+          "version": "26.1120.50957"
         }
       ],
       "extensionPack": [
@@ -309,11 +339,11 @@
       "installations": [
         {
           "source": "windows",
-          "version": "26.1021.22027"
+          "version": "26.1120.50957"
         },
         {
           "source": "wsl",
-          "version": "26.1021.22027"
+          "version": "26.1120.50957"
         }
       ],
       "extensionPack": []
@@ -329,15 +359,35 @@
       "extensionPack": []
     },
     {
+      "id": "redhat.vscode-yaml",
+      "installations": [
+        {
+          "source": "wsl",
+          "version": "2.0.0"
+        }
+      ],
+      "extensionPack": []
+    },
+    {
       "id": "shd101wyy.markdown-preview-enhanced",
       "installations": [
         {
           "source": "windows",
-          "version": "0.8.40"
+          "version": "0.8.41"
         },
         {
           "source": "wsl",
-          "version": "0.8.40"
+          "version": "0.8.41"
+        }
+      ],
+      "extensionPack": []
+    },
+    {
+      "id": "tomoki1207.pdf",
+      "installations": [
+        {
+          "source": "windows",
+          "version": "1.2.2"
         }
       ],
       "extensionPack": []
@@ -371,7 +421,7 @@
       "installations": [
         {
           "source": "wsl",
-          "version": "3.18.1"
+          "version": "3.19.0"
         }
       ],
       "extensionPack": []

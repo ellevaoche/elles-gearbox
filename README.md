@@ -8,8 +8,8 @@ A personal, declarative VS Code extension pack for a Windows and WSL development
 setup. Install one pack to request the extension selection; no extension runtime
 or activation code is included.
 
-The current inventory contains **40 distinct extensions** from the default
-profile: 11 on Windows and 37 in WSL, with overlap. The manifest has **25 direct
+The current inventory contains **45 distinct extensions** from the default
+profile: 14 on Windows and 39 in WSL, with overlap. The manifest has **30 direct
 entries**; another **15 extensions** are supplied through nested packs.
 
 ## Nested packs
@@ -43,7 +43,7 @@ otherwise, the named parent pack supplies it.
 
 <!-- extension-inventory:start -->
 
-All **40 extensions** in the reference inventory:
+All **45 extensions** in the reference inventory:
 
 | Extension ID | Included through |
 | --- | --- |
@@ -59,11 +59,14 @@ All **40 extensions** in the reference inventory:
 | [fedaykindev.openchamber](https://marketplace.visualstudio.com/items?itemName=fedaykindev.openchamber) | Direct entry |
 | [git-ai.git-ai-vscode](https://marketplace.visualstudio.com/items?itemName=git-ai.git-ai-vscode) | Direct entry |
 | [github.vscode-github-actions](https://marketplace.visualstudio.com/items?itemName=github.vscode-github-actions) | Direct entry |
+| [github.vscode-pull-request-github](https://marketplace.visualstudio.com/items?itemName=github.vscode-pull-request-github) | Direct entry |
 | [gitlab.gitlab-workflow](https://marketplace.visualstudio.com/items?itemName=gitlab.gitlab-workflow) | Direct entry |
 | [golang.go](https://marketplace.visualstudio.com/items?itemName=golang.go) | Direct entry |
 | [graphql.vscode-graphql](https://marketplace.visualstudio.com/items?itemName=graphql.vscode-graphql) | Direct entry |
 | [graphql.vscode-graphql-syntax](https://marketplace.visualstudio.com/items?itemName=graphql.vscode-graphql-syntax) | Direct entry |
+| [jdinhlife.gruvbox](https://marketplace.visualstudio.com/items?itemName=jdinhlife.gruvbox) | Direct entry |
 | [johnpapa.vscode-peacock](https://marketplace.visualstudio.com/items?itemName=johnpapa.vscode-peacock) | Direct entry |
+| [jonathanharty.gruvbox-material-icon-theme](https://marketplace.visualstudio.com/items?itemName=jonathanharty.gruvbox-material-icon-theme) | Direct entry |
 | [mechatroner.rainbow-csv](https://marketplace.visualstudio.com/items?itemName=mechatroner.rainbow-csv) | Direct entry |
 | [moshfeu.compare-folders](https://marketplace.visualstudio.com/items?itemName=moshfeu.compare-folders) | Direct entry |
 | [ms-edgedevtools.vscode-edge-devtools](https://marketplace.visualstudio.com/items?itemName=ms-edgedevtools.vscode-edge-devtools) | Direct entry |
@@ -76,7 +79,9 @@ All **40 extensions** in the reference inventory:
 | [openai.chatgpt](https://marketplace.visualstudio.com/items?itemName=openai.chatgpt) | Direct entry |
 | [openai.codex-audio](https://marketplace.visualstudio.com/items?itemName=openai.codex-audio) | [openai.chatgpt](https://marketplace.visualstudio.com/items?itemName=openai.chatgpt) |
 | [redhat.java](https://marketplace.visualstudio.com/items?itemName=redhat.java) | [vscjava.vscode-java-pack](https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-pack) |
+| [redhat.vscode-yaml](https://marketplace.visualstudio.com/items?itemName=redhat.vscode-yaml) | Direct entry |
 | [shd101wyy.markdown-preview-enhanced](https://marketplace.visualstudio.com/items?itemName=shd101wyy.markdown-preview-enhanced) | Direct entry |
+| [tomoki1207.pdf](https://marketplace.visualstudio.com/items?itemName=tomoki1207.pdf) | Direct entry |
 | [vmware.vscode-boot-dev-pack](https://marketplace.visualstudio.com/items?itemName=vmware.vscode-boot-dev-pack) | Direct entry |
 | [vmware.vscode-spring-boot](https://marketplace.visualstudio.com/items?itemName=vmware.vscode-spring-boot) | [vmware.vscode-boot-dev-pack](https://marketplace.visualstudio.com/items?itemName=vmware.vscode-boot-dev-pack) |
 | [vscjava.vscode-gradle](https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-gradle) | [vscjava.vscode-java-pack](https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-pack) |
@@ -282,7 +287,7 @@ npm test              # Maintenance tests and current selection acceptance test
 npm run sync -- --help
 ```
 
-The selection acceptance test deliberately asserts **40 / 25 / 15** and the five
+The selection acceptance test deliberately asserts **45 / 30 / 15** and the five
 nested parents. When intentionally changing the selection, review and update
 that test along with the snapshot and manifest. Future extension versions can
 change pack membership, so those counts are not permanent product limits.
@@ -332,7 +337,7 @@ code --user-data-dir "$test_dir/user-data" \
   --list-extensions
 ```
 
-Compare the result case-insensitively against the 40 snapshot IDs, plus
+Compare the result case-insensitively against the 45 snapshot IDs, plus
 `elmar-local.elles-gearbox`. Investigate missing entries and review any
 extra dependencies or newer upstream pack members; do not infer success only
 from the top-level pack being installed. Test Windows/WSL placement separately
